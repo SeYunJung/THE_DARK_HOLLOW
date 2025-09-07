@@ -7,8 +7,11 @@
 
 
 ## 🖼️ 게임 화면
-게임 플레이 화면입니다. 
+<p>게임 플레이 화면입니다.</p>
 <img src="https://github.com/user-attachments/assets/05026fd2-ae08-45b9-9d16-79ac197f4749" width="600"/>
+<img src="https://github.com/user-attachments/assets/bfc54d08-9ddd-4073-8da8-5d27be39827b" width="600"/>
+
+
 
 ## 🕹️ 플레이 방법
 
@@ -27,6 +30,11 @@
     | `SPACE BAR` | 특수 공격 |
     | `SHIFT + 이동 방향키` | 달리기  |
     | `위 방향키` | 상호작용(사다리 타기) |
+
+(특수 공격)
+- 스킬 게이지를 5칸 채우면 특수 공격(space bar 키 입력)을 할 수 있습니다.
+<img width="300" height="120" alt="image" src="https://github.com/user-attachments/assets/fc14861b-d712-4c69-a7a1-11663dbaa597" />
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/9893ddd8-7b0a-4899-a3f5-afcfcbb0045f" />
 
 (게임 오버)
 - 체력이 0이 되면 메인씬으로 넘어가 게임을 다시 시작합니다.
@@ -59,12 +67,11 @@
 
 ## 🧩 게임 주요 기능
 
-### 1) 플레이어
-- 플레이어 스킬공격 (x키)
-- <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/9893ddd8-7b0a-4899-a3f5-afcfcbb0045f" />
-- 공격(z키)를 통해 스킬게이지를 채워서 
-- <img width="300" height="120" alt="image" src="https://github.com/user-attachments/assets/fc14861b-d712-4c69-a7a1-11663dbaa597" />
-- FSM를 이용한 상태머신으로 상태변경
+### 1) 플레이어 
+- FSM과 상태패턴으로 플레이어의 상태를 관리. 
+- 추상 클래스(BaseState)로 모든 상태들이 가져야 할 기능들을 정의, 구체적인 클래스(Idle/Move/Run/Jump/Hit State)에서 추상 클래스를 정의, 상태 전환 조건에 따라 상태를 전환
+- 모든 상태들을 상태 머신(StateMachine) 클래스로 관리 
+- 플레이어의 모든 애니메이션을 AnimationController에서 관리
 
 ### 2) 모든 오브젝트 동적생성
 - Addressable를 사용하여 게임내 동적생성 오브젝트 관리
@@ -72,10 +79,8 @@
 
 ### 3) 보스의 다양한 패턴
 - HFSM을 이용한 공격패턴 세부화 : 돌진공격, 중거리공격, 장거리공격
-- 중거리공격
-- <img width="300" height="200" alt="image" src="https://github.com/user-attachments/assets/b8bff08d-86e7-425f-a5d9-8ed0e471ecc0" />
-- 장거리공격
-- <img width="100" height="200" alt="image" src="https://github.com/user-attachments/assets/15dd45ba-faac-478b-a801-3158580245c3" />
+- 중거리공격<br><img width="300" height="200" alt="image" src="https://github.com/user-attachments/assets/b8bff08d-86e7-425f-a5d9-8ed0e471ecc0" />
+- 장거리공격<br><img width="100" height="200" alt="image" src="https://github.com/user-attachments/assets/15dd45ba-faac-478b-a801-3158580245c3" />
 
 ### 4) UI
 - Audio Mixer로 BGM과 SFX를 분리
@@ -84,7 +89,7 @@
 - 특수 게이지 테두리 변화로 사용 가능 상태를 즉시 인지하도록 설계
 
 ## 🧠트러블 슈팅  
-- 플레이어가 점프 후 착지하면 이동하지 않거나, 달리는 도중 달리기 키를 떼면 플레이어가 멈추거나, 점프 중 움직일 수 없는 현상이 발생
+<p>플레이어가 점프 후 착지하면 이동하지 않거나, 달리는 도중 달리기 키를 떼면 플레이어가 멈추거나, 점프 중 움직일 수 없는 현상이 발생</p>
 
 <p><b>원인</b></p>
 <p>A상태에서 B상태로 이어지는 전환점을 작성하지 않아서 같은 상태가 지속됨</p>
@@ -93,7 +98,7 @@
 <p>로그를 찍어보면서 어느 시점에 다른 상태로 전환해야 하는지를 찾아서 상태 전환 코드를 짬</p>
 
 
-- 보스패턴중 공격패턴만 3가지이상이 되니 쿨타임을 무시하고 다른 패턴이 엉키는 현상 발생함
+<p>보스패턴중 공격패턴만 3가지이상이 되니 쿨타임을 무시하고 다른 패턴이 엉키는 현상 발생함</p>
 
 <p><b>원인</b></p>
 <p>기존의 가우시안 가중치 계수에 따라 쿨타임이 무시되고 패턴이 돌아가고 패턴이 동시에 일어나는 엉킴현상이 생김</p>
@@ -102,7 +107,7 @@
 <p>패턴 꼬임 현상으로 이전 가우시안식 가중치 패턴은 제거하고 범위내 있는 패턴중 하나를 발동하고 패턴실행중 다른 패턴이 발동 안되게 패턴사이에 쿨타임을 적용함
 </p>
 
-- 시네머신 사용하면서 직접 카메라 쉐이킹, 카메라 러프, 줌인아웃을 만들었는데 작동하지 않았습니다
+<p>시네머신 사용하면서 직접 카메라 쉐이킹, 카메라 러프, 줌인아웃을 만들었는데 작동하지 않았습니다</p>
 
 <p><b>원인</b></p>
 <p>시네머신 내부에 이미 구현된 기능 때문에 작동하지 않았습니다. </p>
@@ -111,7 +116,7 @@
 <p>Microsft Docs 찾아보며 기능 찾아서 해결했습니다.</p>
 
 
-- UI의 텍스트가 뭉개지는 문제가 발생하였습니다.
+<p>UI의 텍스트가 뭉개지는 문제가 발생하였습니다.</p>
 
 <p><b>원인</b></p>
 <p>레거시 텍스트를 사용함에 따라 해상도에 영향을 받아 텍스트가 뭉개진 것이었습니다.</p>
