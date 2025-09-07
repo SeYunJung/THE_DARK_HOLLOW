@@ -40,8 +40,7 @@
 <img width="300" height="120" alt="image" src="https://github.com/user-attachments/assets/fc14861b-d712-4c69-a7a1-11663dbaa597" /><br/>
 <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/9893ddd8-7b0a-4899-a3f5-afcfcbb0045f" />
 
-<br/>
-<br/>
+<br/><br/>
 (게임 오버)
 - 체력이 0이 되면 메인씬으로 넘어가 게임을 다시 시작합니다.
 
