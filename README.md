@@ -41,7 +41,7 @@
 <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/9893ddd8-7b0a-4899-a3f5-afcfcbb0045f" />
 
 <br/>
-
+<br/>
 (게임 오버)
 - 체력이 0이 되면 메인씬으로 넘어가 게임을 다시 시작합니다.
 
