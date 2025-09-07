@@ -10,7 +10,7 @@
 <p>게임 플레이 화면입니다.</p>
 <img src="https://github.com/user-attachments/assets/05026fd2-ae08-45b9-9d16-79ac197f4749" width="600"/>
 <img src="https://github.com/user-attachments/assets/bfc54d08-9ddd-4073-8da8-5d27be39827b" width="600"/>
-
+<img src="https://github.com/user-attachments/assets/994c7aff-935a-4815-aa35-cb7d5e57ba56" width="600"/>
 
 
 ## 🕹️ 플레이 방법
@@ -32,8 +32,8 @@
     | `위 방향키` | 상호작용(사다리 타기) |
 
 (특수 공격)
-- 스킬 게이지를 5칸 채우면 특수 공격(space bar 키 입력)을 할 수 있습니다.<br>
-<img width="300" height="120" alt="image" src="https://github.com/user-attachments/assets/fc14861b-d712-4c69-a7a1-11663dbaa597" />
+- 스킬 게이지를 5칸 채우면 특수 공격(space bar 키 입력)을 할 수 있습니다.<br/><br/>
+<img width="300" height="120" alt="image" src="https://github.com/user-attachments/assets/fc14861b-d712-4c69-a7a1-11663dbaa597" /><br/>
 <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/9893ddd8-7b0a-4899-a3f5-afcfcbb0045f" />
 
 (게임 오버)
